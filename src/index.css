@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(88, 85, 85);
 }
 
 .pokemon {
@@ -16,10 +17,20 @@ body {
   margin: 10px 10px;
   border: 1px gray solid;
   border-radius: 10px;
+  background-color: rgb(153, 147, 147);
 }
 
 .pokedex {
   display: flex;
   flex-wrap: wrap;
   margin: 10px 10px;
+}
+
+p, h1 {
+  color: aliceblue;
+}
+
+.filterButton {
+  margin: 10px;
+  width: 80px;
 }

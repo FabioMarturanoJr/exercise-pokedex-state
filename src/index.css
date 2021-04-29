@@ -14,7 +14,7 @@ body {
   justify-content: space-around;
   flex: 1 1 auto;
   min-width: 25%;
-  margin: 10px 10px;
+  margin: 10px 30%;
   border: 1px gray solid;
   border-radius: 10px;
   background-color: rgb(153, 147, 147);
@@ -30,7 +30,27 @@ p, h1 {
   color: aliceblue;
 }
 
-.filterButton {
+button {
   margin: 10px;
   width: 80px;
+}
+
+.filterFire {
+  background-color: rgb(238, 32, 32);
+}
+
+.filterPsychic {
+  background-color: slateblue;
+}
+
+.filterElectric {
+  background-color: yellow;
+}
+
+.filterBug {
+  background-color: yellowgreen;
+}
+
+.filterPoison {
+  background-color: purple;
 }

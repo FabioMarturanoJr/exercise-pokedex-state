@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(88, 85, 85);
+  background-color: rgb(51, 46, 46);
 }
 
 .pokemon {
@@ -35,22 +35,35 @@ button {
   width: 80px;
 }
 
-.filterFire {
-  background-color: rgb(238, 32, 32);
-}
-
-.filterPsychic {
-  background-color: slateblue;
-}
-
-.filterElectric {
+#Electric {
   background-color: yellow;
 }
 
-.filterBug {
+#Fire {
+  background-color: darkorange;
+}
+
+#Bug {
   background-color: yellowgreen;
 }
 
-.filterPoison {
+#Poison {
   background-color: purple;
+}
+
+#Psychic {
+  background-color: deeppink;
+}
+
+#Normal {
+  background-color: rgb(146, 138, 60);
+}
+
+#Dragon {
+  background-color: #7038F8;
+}
+
+.next {
+  background-color: forestgreen;
+  color: aliceblue;
 }

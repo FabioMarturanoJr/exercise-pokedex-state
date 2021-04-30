@@ -1,9 +1,9 @@
 import React from 'react';
-// import pokemons from './data';
-import Pokemon from './Pokemon';
+import ButtonAll from './components/ButtonAll';
+import ButtonFilter from './components/ButtonFilter';
+import Pokemon from './components/Pokemon';
 
-class Pokedex extends React.Component {
-    
+class Pokedex extends React.Component {    
   constructor(props) {
     super(props);
     this.switchPokemon = this.switchPokemon.bind(this);
@@ -34,24 +34,23 @@ class Pokedex extends React.Component {
     }
   }
 
-  async switchFilter({ target : { id } }) {
-    await this.setState({ filter : id });
-    this.switchPokemon();
+  switchFilter({ target : { id } }) {
+    this.setState({ filter : id }, this.switchPokemon);
   }
 
-  render() {        
+  render() {
+    const { pokemons } = this.props;
+    const onlyTypes = [...new Set(pokemons.map((pk) => pk.type))];
+
     return (
       <div>
         <div className="pokedex">
           <Pokemon key={this.state.pokemon.id} pokemon={this.state.pokemon} />
         </div>
-        <button onClick={this.switchPokemon}>All</button>
+        <ButtonAll switchPk={this.switchPokemon} />
         <div>
-          <button onClick={this.switchFilter} className="filterFire" id="Fire">Fire</button>
-          <button onClick={this.switchFilter} className="filterPsychic" id="Psychic">Psychic</button>
-          <button onClick={this.switchFilter} className="filterElectric" id="Electric">Electric</button>
-          <button onClick={this.switchFilter} className="filterBug" id="Bug">Bug</button>
-          <button onClick={this.switchFilter} className="filterPoison" id="Poison">Poison</button>
+          { onlyTypes
+            .map((type) => <ButtonFilter filterPk={ this.switchFilter } filter={ type } key={ type }/>) }
         </div>
         <p>
           Filtro: {this.state.filter}
